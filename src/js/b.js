@@ -3,7 +3,7 @@ export default function bar() {
 }
 
 export const bar2 = function() {
-  console.log(`bar2333`)
+  console.log(`bar2333444444`)
 }
 
 export const bar3 = function() {

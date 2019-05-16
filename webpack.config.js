@@ -2,11 +2,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackMd5Hash = require('webpack-md5-hash')
 const path = require('path')
 const distPath = path.resolve(__dirname, './dist')
+const webpack = require('webpack')
 
 module.exports = {
   target: 'web',
   mode: 'production',
-  entry: './src/js/index.js',
+  entry: {
+    index: './src/js/index.js',
+    detail: './src/js/detail.js'
+  },
   output: {
     filename: `js/[name].[chunkhash].js`,
     path: distPath,
@@ -38,6 +42,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css'
     }),
-    new WebpackMd5Hash()
-  ]
+    new WebpackMd5Hash(),
+    // new webpack.HashedModuleIdsPlugin()
+  ],
+  optimization: {
+    // namedChunks: true
+  }
 }
