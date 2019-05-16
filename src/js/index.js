@@ -1,6 +1,7 @@
 import '@css/index.css'
 
-import bar from './b.js'
-import { bar2 } from './b.js'
+import bar, { bar2, bar3 } from './b.js'
 
 bar()
+bar2()
+bar3()
